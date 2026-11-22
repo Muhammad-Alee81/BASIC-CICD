@@ -21,7 +21,7 @@ jobs:
       - run: npm run build
 
   # CD: only on main, and only if CI passed
-    publish-image:
+  publish-image:
     needs: test-and-build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
